@@ -24,7 +24,7 @@ const ProductCard = ({ product }: Props) => {
       {/* Mask Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center z-10 transition-opacity duration-300">
         <Link
-          href="/cart"
+          href={`/products/${product.slug}`}
           className="bg-white text-primary px-9 py-3 font-semibold text-base mb-4"
         >
           Add to cart

@@ -14,7 +14,7 @@ interface Props {
 const CategoryCard = ({category}: Props) => {
   return (
     <div className="group">
-      <Link href="">
+      <Link href="/shop">
         <Image
           src={category.imageUrl}
           alt="Dining"

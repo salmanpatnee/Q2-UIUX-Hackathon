@@ -11,7 +11,7 @@ const Hero = () => {
                   <span className='font-semibold mb-1 text-text text-base tracking-[3px]'>New Arrival</span>
                   <h1 className='text-primary font-bold md:text-[52px] text-3xl  sm:leading-[65px] mb-4'>Discover Our <br></br>New Collection</h1>
                   <p className='font-medium text-lg text-text mb-11'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.</p>
-                  <Link className='bg-primary text-white text-center py-6 text-base font-bold px-16 inline-block w-auto hover:bg-black transition-all' href="/">
+                  <Link className='bg-primary text-white text-center py-6 text-base font-bold px-16 inline-block w-auto hover:bg-black transition-all' href="/shop">
                   BUY NOW
                   </Link>
                 </div>

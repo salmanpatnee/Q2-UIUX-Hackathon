@@ -147,7 +147,7 @@ export default function Home() {
           </div>
           <div className="text-center mt-12">
             <Link
-              href="/"
+              href="/shop"
               className="bg-white border border-primary text-primary text-center py-3 px-20 text-base font-semibold hover:bg-secondary "
             >
               Show More
@@ -167,7 +167,7 @@ export default function Home() {
               that inspire you
             </p>
             <Link
-              href="/"
+              href="/shop"
               className="bg-primary   border border-primary text-white text-center py-3 px-10 text-base font-semibold hover:bg-black transition-all"
             >
               Explore More

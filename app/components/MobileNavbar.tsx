@@ -11,9 +11,9 @@ import Link from "next/link";
 
 const links = [
   { label: "Home", href: "/" },
-  { label: "Contact", href: "/" },
-  { label: "About", href: "/" },
-  { label: "Sign Up", href: "/" },
+  { label: "Shop", href: "/shop" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const MobileNavbar = () => {

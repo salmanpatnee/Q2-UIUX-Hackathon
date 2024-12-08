@@ -84,8 +84,8 @@ interface Props {
 
 const ProductPage = ({ params: { slug } }: Props) => {
   const [quantity, setQuantity] = useState(1);
-  const [thumbsSwiper] = useState<Swiper | null>(null); // Corrected type
-
+//   const [thumbsSwiper] = useState<Swiper | null>(null); // Corrected type
+const [thumbsSwiper, setThumbsSwiper] = useState<typeof Swiper | null>(null);
   const productImages = [
     "/images/products/product.png",
     "/images/products/product.png",
@@ -139,15 +139,15 @@ const ProductPage = ({ params: { slug } }: Props) => {
       <section className="flex lg:flex-row flex-col wrapper">
         <div className="lg:w-6/12 w-full lg:pe-10 mb-10 lg:mb-0">
           <div className="flex gap-8">
-            <Swiper
-              loop={true}
-              spaceBetween={10}
-              navigation={true}
-              thumbs={{
-                swiper: thumbsSwiper ? thumbsSwiper : null,
-              }}
-              modules={[FreeMode, Navigation, Thumbs]}
-            >
+          <Swiper
+  loop={true}
+  spaceBetween={10}
+  navigation={true}
+  thumbs={{
+    swiper: thumbsSwiper ? thumbsSwiper : null,
+  }}
+  modules={[FreeMode, Navigation, Thumbs]}
+>
               {productImages.map((image, index) => {
                 return (
                   <SwiperSlide

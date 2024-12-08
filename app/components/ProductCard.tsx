@@ -35,44 +35,47 @@ const ProductCard = ({ product }: Props) => {
           <a
             href="#"
             className="hover:text-gray-300 transition flex items-center"
+            aria-label="Share product"
           >
             <Share2
               size={16}
               color="#ffffff"
               strokeWidth={1}
               className="fill-white me-1"
-            />{" "}
+            />
             Share
           </a>
           <a
             href="#"
             className="hover:text-gray-300 transition flex items-center"
+            aria-label="Compare product"
           >
             <ArrowRightLeft
               size={16}
               color="#ffffff"
               strokeWidth={1}
               className="fill-white me-1"
-            />{" "}
+            />
             Compare
           </a>
           <a
             href="#"
             className="hover:text-gray-300 transition flex items-center"
+            aria-label="Like product"
           >
             <Heart
               size={16}
               color="#ffffff"
               strokeWidth={1}
               className="stroke-white me-1"
-            />{" "}
+            />
             Like
           </a>
         </div>
       </div>
 
       {/* Card Content */}
-      <div className="relative z-0">
+      <article className="relative z-0">
         <div className="relative">
           <Image
             src={product.imageUrl}
@@ -93,7 +96,8 @@ const ProductCard = ({ product }: Props) => {
             </span>
           )}
         </div>
-        <div className="bg-[#F4F5F7] p-4 rounded-b-md">
+
+        <section className="bg-[#F4F5F7] p-4 rounded-b-md">
           <h3 className="text-2xl font-semibold text-[#3A3A3A] mb-2">
             {product.title}
           </h3>
@@ -108,8 +112,8 @@ const ProductCard = ({ product }: Props) => {
               Rp {product.price}
             </del>
           </p>
-        </div>
-      </div>
+        </section>
+      </article>
     </div>
   );
 };

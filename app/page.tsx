@@ -122,33 +122,45 @@ export default function Home() {
     <div>
       <Hero />
 
-      <section className=" py-14">
+      <section className="py-14">
         <div className="wrapper">
+          {/* Section Title */}
           <h2 className="title">Browse The Range</h2>
+
+          {/* Description Text */}
           <p className="text-text-light text-xl text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
+
+          {/* Categories Grid */}
           <div className="grid sm:grid-cols-3 gap-3 mt-14">
-            {categories.map((c) => {
-              return <CategoryCard key={c.imageUrl} category={c} />;
-            })}
+            {/* Rendering Category Cards */}
+            {categories.map((category) => (
+              <CategoryCard key={category.imageUrl} category={category} />
+            ))}
           </div>
         </div>
       </section>
 
       <section className="mb-14">
         <div className="wrapper">
-          <h2 className="title">Our Products</h2>
+          {/* Section Title */}
+          <header>
+            <h2 className="title">Our Products</h2>
+          </header>
 
+          {/* Product Grid */}
           <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-6 mt-8">
-            {products.map((p) => {
-              return <ProductCard key={p.imageUrl} product={p} />;
-            })}
+            {products.map((p) => (
+              <ProductCard key={p.imageUrl} product={p} />
+            ))}
           </div>
+
+          {/* Show More Button */}
           <div className="text-center mt-12">
             <Link
               href="/shop"
-              className="bg-white border border-primary text-primary text-center py-3 px-20 text-base font-semibold hover:bg-secondary "
+              className="bg-white border border-primary text-primary text-center py-3 px-20 text-base font-semibold hover:bg-secondary"
             >
               Show More
             </Link>

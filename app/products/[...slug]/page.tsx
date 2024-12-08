@@ -248,9 +248,9 @@ const ProductPage = ({ params: { slug } }: Props) => {
                 +
               </button>
             </div>
-            <button className="bg-white text-black border border-black rounded-lg text-center h-16 px-12 text-base hover:bg-primary hover:text-white hover:border-primary">
+            <Link href="/cart" className="flex items-center bg-white text-black border border-black rounded-lg text-center h-16 px-12 text-base hover:bg-primary hover:text-white hover:border-primary">
               Add To Cart
-            </button>
+            </Link>
             <button className="bg-white text-black border border-black rounded-lg text-center h-16 px-12 text-base hover:bg-primary hover:text-white hover:border-primary flex items-center justify-center space-x-2">
               <Plus />
               <span>Compare</span>

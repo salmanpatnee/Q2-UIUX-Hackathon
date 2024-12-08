@@ -15,14 +15,9 @@ const Header = () => {
     <header className="border border-b py-8">
       <div className="wrapper flex items-center justify-between ">
         <div className="col logo w-full text-center md:w-auto">
-          <Link href="/">
-            <Image
-              src="/images/logo.png"
-              alt="logo"
-              width="185"
-              height="41"
-              className=""
-            />
+          <Link href="/" className="flex items-center gap-1">
+            <Image src="/images/logo-icon.png"alt="Furniro" width={50} height={32}/ >
+            <h1 className="font-bold text-[34px]">Furniro</h1>
           </Link>
         </div>
 

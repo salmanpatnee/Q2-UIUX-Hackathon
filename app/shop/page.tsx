@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/select";
 import ProductCard from "../components/ProductCard";
 import Pagination from "../components/Pagination";
+import Features from "../components/Features";
 
 const ShopPage = () => {
   const products = [
@@ -217,7 +218,11 @@ const ShopPage = () => {
 
         <Pagination />
       </section>
+
+      <Features />
     </div>
+
+    
   );
 };
 

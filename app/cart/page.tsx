@@ -108,8 +108,10 @@ const ShopPage = () => {
                 </p>
               </div>
               <div className="text-center">
-                <button className="bg-transparent text-black border border-black rounded-lg h-12 lg:h-14 px-8 lg:px-12 text-sm lg:text-base hover:bg-primary hover:text-white hover:border-primary">
-                  Checkout
+                <button  className="bg-transparent text-black border border-black rounded-lg h-12 lg:h-14 px-8 lg:px-12 text-sm lg:text-base hover:bg-primary hover:text-white hover:border-primary">
+                  <Link href="/checkout">
+                    Checkout
+                  </Link>
                 </button>
               </div>
             </div>

@@ -96,7 +96,7 @@ const Header = () => {
                 </div>
                 <div className="flex items-center justify-between pt-7 space-x-2">
                 <Link href="/cart" className="border rounded-2xl text-xs py-2 px-6 hover:bg-primary hover:text-white transition-colors">Cart</Link>
-                <Link href="/cart" className="border rounded-2xl text-xs py-2 px-6 hover:bg-primary hover:text-white transition-colors">Checkout</Link>
+                <Link href="/checkout" className="border rounded-2xl text-xs py-2 px-6 hover:bg-primary hover:text-white transition-colors">Checkout</Link>
                 <Link href="/cart" className="border rounded-2xl text-xs py-2 px-6 hover:bg-primary hover:text-white transition-colors">Comparision</Link>
                 </div>
               </PopoverContent>

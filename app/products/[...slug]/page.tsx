@@ -1,11 +1,5 @@
 "use client";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+
 import {
   ChevronRight,
   Facebook,
@@ -24,10 +18,8 @@ import Link from "next/link";
 // import { Heart, RefreshCw, Star, Truck } from "lucide-react";
 // import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Thumbs, FreeMode, Navigation, Autoplay } from "swiper/modules";
+import { Thumbs, FreeMode, Navigation } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/thumbs";
-import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import Image from "next/image";
 import { useState } from "react";
@@ -35,48 +27,47 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ProductCard from "@/app/components/ProductCard";
 
 const products = [
-    {
-      imageUrl: "/images/products/Lolito.png",
-      title: "Respira",
-      slug: "respira",
-      subTitle: "Stylish cafe chair",
-      salePrice: "2.50",
-      price: "3.50",
-      discount: null,
-      newArrival: true,
-    },
-    {
-      imageUrl: "/images/products/Lev.png",
-      title: "Leviosa",
-      slug: "leviosa",
-      subTitle: "Outdoor bar table and stool",
-      salePrice: "7.00",
-      price: "14.00",
-      discount: "50",
-      newArrival: false,
-    },
-    {
-      imageUrl: "/images/products/bed.png",
-      title: "Syltherine",
-      slug: "syltherine",
-      subTitle: "Stylish cafe chair",
-      salePrice: "2.500",
-      price: "3.500",
-      discount: "30",
-      newArrival: false,
-    },
-    {
-      imageUrl: "/images/products/Syltherine.png",
-      title: "Syltherine",
-      slug: "syltherine",
-      subTitle: "Stylish cafe chair",
-      salePrice: "2.500",
-      price: "3.500",
-      discount: null,
-      newArrival: true,
-    },
-  ];
-
+  {
+    imageUrl: "/images/products/Lolito.png",
+    title: "Respira",
+    slug: "respira",
+    subTitle: "Stylish cafe chair",
+    salePrice: "2.50",
+    price: "3.50",
+    discount: null,
+    newArrival: true,
+  },
+  {
+    imageUrl: "/images/products/Lev.png",
+    title: "Leviosa",
+    slug: "leviosa",
+    subTitle: "Outdoor bar table and stool",
+    salePrice: "7.00",
+    price: "14.00",
+    discount: "50",
+    newArrival: false,
+  },
+  {
+    imageUrl: "/images/products/bed.png",
+    title: "Syltherine",
+    slug: "syltherine",
+    subTitle: "Stylish cafe chair",
+    salePrice: "2.500",
+    price: "3.500",
+    discount: "30",
+    newArrival: false,
+  },
+  {
+    imageUrl: "/images/products/Syltherine.png",
+    title: "Syltherine",
+    slug: "syltherine",
+    subTitle: "Stylish cafe chair",
+    salePrice: "2.500",
+    price: "3.500",
+    discount: null,
+    newArrival: true,
+  },
+];
 
 interface Props {
   params: { slug: string[] };
@@ -84,8 +75,8 @@ interface Props {
 
 const ProductPage = ({ params: { slug } }: Props) => {
   const [quantity, setQuantity] = useState(1);
-//   const [thumbsSwiper] = useState<Swiper | null>(null); // Corrected type
-const [thumbsSwiper, setThumbsSwiper] = useState<typeof Swiper | null>(null);
+  //   const [thumbsSwiper] = useState<Swiper | null>(null); // Corrected type
+  // const [thumbsSwiper, setThumbsSwiper] = useState<typeof Swiper | null>(null);
   const productImages = [
     "/images/products/product.png",
     "/images/products/product.png",
@@ -139,15 +130,12 @@ const [thumbsSwiper, setThumbsSwiper] = useState<typeof Swiper | null>(null);
       <section className="flex lg:flex-row flex-col wrapper">
         <div className="lg:w-6/12 w-full lg:pe-10 mb-10 lg:mb-0">
           <div className="flex gap-8">
-          <Swiper
-  loop={true}
-  spaceBetween={10}
-  navigation={true}
-  thumbs={{
-    swiper: thumbsSwiper ? thumbsSwiper : null,
-  }}
-  modules={[FreeMode, Navigation, Thumbs]}
->
+            <Swiper
+              loop={true}
+              spaceBetween={10}
+              navigation={true}
+              modules={[Navigation]}
+            >
               {productImages.map((image, index) => {
                 return (
                   <SwiperSlide
@@ -314,38 +302,110 @@ const [thumbsSwiper, setThumbsSwiper] = useState<typeof Swiper | null>(null);
 
       <section className="border-y border-[#D9D9D9] py-12 mb-10">
         <div className="wrapper">
-          <Tabs defaultValue="account" className="lg:w-[1000px] w-full mx-auto ">
+          <Tabs
+            defaultValue="account"
+            className="lg:w-[1000px] w-full mx-auto "
+          >
             <TabsList className="flex flex-col md:flex-row justify-center bg-white space-x-12  lg:mb-9 mb-20 text-center">
-              <TabsTrigger  className="text-2xl font-normal text-[#9F9F9F] " value="account">Description</TabsTrigger>
-              <TabsTrigger  className="text-2xl font-normal text-[#9F9F9F] " value="password">Additional Information</TabsTrigger>
-              <TabsTrigger  className="text-2xl font-normal text-[#9F9F9F] " value="reviews">Reviews [5]</TabsTrigger>
+              <TabsTrigger
+                className="text-2xl font-normal text-[#9F9F9F] "
+                value="account"
+              >
+                Description
+              </TabsTrigger>
+              <TabsTrigger
+                className="text-2xl font-normal text-[#9F9F9F] "
+                value="password"
+              >
+                Additional Information
+              </TabsTrigger>
+              <TabsTrigger
+                className="text-2xl font-normal text-[#9F9F9F] "
+                value="reviews"
+              >
+                Reviews [5]
+              </TabsTrigger>
             </TabsList>
             <TabsContent value="account">
               <div className="text-base text-[#9F9F9F]">
-                <p className="mb-8">Embodying the raw, wayward spirit of rock roll, the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road.</p>
-                <p>Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. The analogue knobs allow you to fine tune the controls to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.</p>
+                <p className="mb-8">
+                  Embodying the raw, wayward spirit of rock roll, the Kilburn
+                  portable active stereo speaker takes the unmistakable look and
+                  sound of Marshall, unplugs the chords, and takes the show on
+                  the road.
+                </p>
+                <p>
+                  Weighing in under 7 pounds, the Kilburn is a lightweight piece
+                  of vintage styled engineering. Setting the bar as one of the
+                  loudest speakers in its class, the Kilburn is a compact,
+                  stout-hearted hero with a well-balanced audio which boasts a
+                  clear midrange and extended highs for a sound that is both
+                  articulate and pronounced. The analogue knobs allow you to
+                  fine tune the controls to your personal preferences while the
+                  guitar-influenced leather strap enables easy and stylish
+                  travel.
+                </p>
                 <div className="flex space-x-5 mt-10">
-                    <div className="bg-[#F9F1E7] rounded">
-                        <Image src="/images/products/sofa.png" alt="sofa" width={605} height={348} />
-                    </div>
-                    <div className="bg-[#F9F1E7] rounded">
-                        <Image src="/images/products/sofa.png" alt="sofa" width={605} height={348} />
-                    </div>
+                  <div className="bg-[#F9F1E7] rounded">
+                    <Image
+                      src="/images/products/sofa.png"
+                      alt="sofa"
+                      width={605}
+                      height={348}
+                    />
+                  </div>
+                  <div className="bg-[#F9F1E7] rounded">
+                    <Image
+                      src="/images/products/sofa.png"
+                      alt="sofa"
+                      width={605}
+                      height={348}
+                    />
+                  </div>
                 </div>
               </div>
             </TabsContent>
             <TabsContent value="password">
-            <div className="text-base text-[#9F9F9F]">
-                <p className="mb-8">Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. The analogue knobs allow you to fine tune the controls to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.</p>
-                <p >Embodying the raw, wayward spirit of rock roll, the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road.</p>
+              <div className="text-base text-[#9F9F9F]">
+                <p className="mb-8">
+                  Weighing in under 7 pounds, the Kilburn is a lightweight piece
+                  of vintage styled engineering. Setting the bar as one of the
+                  loudest speakers in its class, the Kilburn is a compact,
+                  stout-hearted hero with a well-balanced audio which boasts a
+                  clear midrange and extended highs for a sound that is both
+                  articulate and pronounced. The analogue knobs allow you to
+                  fine tune the controls to your personal preferences while the
+                  guitar-influenced leather strap enables easy and stylish
+                  travel.
+                </p>
+                <p>
+                  Embodying the raw, wayward spirit of rock roll, the Kilburn
+                  portable active stereo speaker takes the unmistakable look and
+                  sound of Marshall, unplugs the chords, and takes the show on
+                  the road.
+                </p>
               </div>
             </TabsContent>
             <TabsContent value="reviews">
-            <div className="text-base text-[#9F9F9F]">
-
-            <p className="mb-8">Embodying the raw, wayward spirit of rock roll, the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road.</p>
-            <p>Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. The analogue knobs allow you to fine tune the controls to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.</p>
-            </div>
+              <div className="text-base text-[#9F9F9F]">
+                <p className="mb-8">
+                  Embodying the raw, wayward spirit of rock roll, the Kilburn
+                  portable active stereo speaker takes the unmistakable look and
+                  sound of Marshall, unplugs the chords, and takes the show on
+                  the road.
+                </p>
+                <p>
+                  Weighing in under 7 pounds, the Kilburn is a lightweight piece
+                  of vintage styled engineering. Setting the bar as one of the
+                  loudest speakers in its class, the Kilburn is a compact,
+                  stout-hearted hero with a well-balanced audio which boasts a
+                  clear midrange and extended highs for a sound that is both
+                  articulate and pronounced. The analogue knobs allow you to
+                  fine tune the controls to your personal preferences while the
+                  guitar-influenced leather strap enables easy and stylish
+                  travel.
+                </p>
+              </div>
             </TabsContent>
           </Tabs>
         </div>

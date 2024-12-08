@@ -22,7 +22,7 @@ const InputGroup: React.FC<InputGroupProps> = ({
       </label>
       <input
         type={type}
-        className={`rounded-sm h-[75px] border border-[#9F9F9F] w-full px-4 ${inputClassName}`}
+        className={`rounded-lg h-[75px] border border-[#9F9F9F] w-full px-4 ${inputClassName}`}
         placeholder={placeholder}
       />
     </div>

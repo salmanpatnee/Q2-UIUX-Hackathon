@@ -80,6 +80,7 @@ export type Product = {
   salePrice?: number;
   stock?: number;
   reviewsCount?: number;
+  imageUrl?: string; 
   image?: {
     asset?: {
       _ref: string;

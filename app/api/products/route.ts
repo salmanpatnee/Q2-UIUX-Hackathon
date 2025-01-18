@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 export async function GET(request: NextRequest) {
   try {
     const products = await client.fetch(
-      '*[_type == "product"]',
+      '*[_type == "product"]{title,slug,price,salePrice,"imageUrl": image.asset->url}',
       {},
       { cache: "no-store" }
     );

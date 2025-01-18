@@ -1,15 +1,13 @@
-// import { Product } from '@/lib/types';
+import HomeSlider from '@/app/components/HomeSlider';
+import { fetchProducts } from '@/utils/helpers';
 import Link from 'next/link';
 import Hero from './components/Hero';
-import HomeSlider from '@/app/components/HomeSlider';
 import ProductCard from './components/ProductCard';
-import { Product } from '@/sanity.types';
 
 const HomePage = async () => {
 
-  const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
-  const response = await fetch(`${baseURL}/api/products`, { cache: "no-store" });
-  const products: Product[]  = await response.json();
+  
+  const products = await fetchProducts();
 
   return (
     <div>

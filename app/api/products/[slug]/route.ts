@@ -23,6 +23,7 @@ export async function GET(
   }
 
   try {
+    // Fetch the product using the defined query
     const { data: product } = await sanityFetch({
       query: PRODUCT_QUERY,
       params: { slug },

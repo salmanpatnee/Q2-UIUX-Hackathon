@@ -2,29 +2,20 @@
 
 import {
   ChevronRight,
-  Facebook,
-  FacebookIcon,
-  Grip,
-  Heart,
-  Laptop,
   Plus,
-  RefreshCw,
-  SlidersHorizontal,
-  Star,
-  Truck,
-  Twitter,
+  Star
 } from "lucide-react";
 import Link from "next/link";
 // import { Heart, RefreshCw, Star, Truck } from "lucide-react";
 // import React, { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Thumbs, FreeMode, Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
+import ProductCard from "@/app/components/ProductCard";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
 import { useState } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import ProductCard from "@/app/components/ProductCard";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const products = [
   {

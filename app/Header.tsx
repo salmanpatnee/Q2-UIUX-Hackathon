@@ -20,7 +20,7 @@ const Header = () => {
               width={50}
               height={32}
             />
-            <h1 className="font-bold text-[34px]">Furniro</h1>
+            <h1 className="font-bold text-[34px]">QuickFood</h1>
           </Link>
         </div>
 

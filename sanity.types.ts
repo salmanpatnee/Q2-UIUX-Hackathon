@@ -76,6 +76,12 @@ export type Product = {
   _rev: string;
   title?: string;
   slug?: Slug;
+  category?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "category";
+  };
   price?: number;
   salePrice?: number;
   stock?: number;
@@ -169,13 +175,23 @@ export type SanityImageMetadata = {
   isOpaque?: boolean;
 };
 
+export type Category = {
+  _id: string;
+  _type: "category";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  slug?: Slug;
+};
+
 export type Slug = {
   _type: "slug";
   current?: string;
   source?: string;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Product | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Product | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Category | Slug;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./app/api/products/[slug]/route.ts
 // Variable: PRODUCT_QUERY
@@ -188,6 +204,12 @@ export type PRODUCT_QUERYResult = {
   _rev: string;
   title?: string;
   slug?: Slug;
+  category?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "category";
+  };
   price?: number;
   salePrice?: number;
   stock?: number;

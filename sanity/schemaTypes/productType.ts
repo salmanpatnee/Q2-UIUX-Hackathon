@@ -10,8 +10,9 @@ export const productType = defineType({
         select: {
             title: "title",
             media: "image",
+            category: 'category.name',
         },
-        prepare({ title, media }) {
+        prepare({ title, media, category }) {
             const titleFormatted = title || 'Untitled product'
 
             return {
@@ -34,7 +35,11 @@ export const productType = defineType({
             validation: (rule) => rule.required().error('Required to generate a page on the website'),
             hidden: ({ document }) => !document?.title,
         }),
-
+        defineField({
+            name: 'category',
+            type: 'reference',
+            to: [{type: 'category'}],
+          }),
         defineField({
             name: 'price',
             type: 'number',

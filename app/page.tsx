@@ -1,12 +1,10 @@
-import HomeSlider from '@/app/components/HomeSlider';
-import { fetchProducts } from '@/utils/helpers';
-import Link from 'next/link';
-import Hero from './components/Hero';
-import ProductCard from './components/ProductCard';
+import HomeSlider from "@/app/components/HomeSlider";
+import { fetchProducts } from "@/utils/helpers";
+import Link from "next/link";
+import Hero from "./components/Hero";
+import ProductList from "./components/ProductList";
 
 const HomePage = async () => {
-
-  
   const products = await fetchProducts();
 
   return (
@@ -22,10 +20,7 @@ const HomePage = async () => {
 
           {/* Product Grid */}
           <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-6 mt-8">
-           
-            {products.map((product) => (
-              <ProductCard key={product._id} product={product} />
-            ))}
+            <ProductList products={products} />
           </div>
 
           {/* Show More Button */}
@@ -40,7 +35,7 @@ const HomePage = async () => {
         </div>
       </section>
 
-      <HomeSlider/>
+      <HomeSlider />
     </div>
   );
 };

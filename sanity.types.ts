@@ -85,6 +85,7 @@ export type Product = {
   price?: number;
   salePrice?: number;
   stock?: number;
+  quantity?: number;
   reviewsCount?: number;
   imageUrl?: string; 
   image?: {

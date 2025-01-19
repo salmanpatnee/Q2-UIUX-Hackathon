@@ -1,13 +1,15 @@
-import type { Metadata } from "next";
-import { Poppins } from 'next/font/google';
+import { Poppins } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 import Footer from "./Footer";
 import "./globals.css";
 import Header from "./Header";
+import { GlobalProvider } from "./GlobalProvider";
+import { Metadata } from "next";
 
 const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  display: 'swap',
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -23,12 +25,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <Header/>
-        <main>
-          {children}
-        </main>
-        <Footer/>
-        </body>
+        <GlobalProvider>
+          <Header />
+          <main>
+            {children}
+            {/* <SanityLive/> */}
+          </main>
+          <Footer />
+        </GlobalProvider>
+        <Toaster />
+      </body>
     </html>
   );
 }

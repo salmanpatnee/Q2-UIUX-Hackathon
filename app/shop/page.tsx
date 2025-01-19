@@ -13,9 +13,11 @@ import PageHeader from "../components/PageHeader";
 import Pagination from "../components/Pagination";
 import ProductList from "../components/ProductList";
 
-const ShopPage = async ({searchParams}: {searchParams: {category: string}}) => {
+const ShopPage = async ({searchParams}: {searchParams: {category: string, page: string}}) => {
   
-  
+  const page = parseInt(searchParams.page) || 1;
+  const pageSize = 2;
+
   const categories = await fetchCategories();
   const products = await fetchProducts();
 
@@ -102,7 +104,7 @@ const ShopPage = async ({searchParams}: {searchParams: {category: string}}) => {
           </div>
         </div>
 
-        <Pagination />
+        <Pagination itemCount={100} pageSize={10} currentPage={1} />
       </section>
     </div>
   );

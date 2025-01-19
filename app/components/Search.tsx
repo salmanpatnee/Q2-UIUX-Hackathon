@@ -1,27 +1,33 @@
 "use client";
 import React, { useState } from "react";
+import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 
-interface Props {
-  onSearch: (query: string) => void;
-}
+const Search = () => {
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const { replace } = useRouter();
 
-const Search: React.FC<Props> = ({ onSearch }) => {
-  const [query, setQuery] = useState<string>("");
+  const handleSearch = (query: string) => {
+    const params = new URLSearchParams(searchParams);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(e.target.value);
-  };
-
-  const handleSearch = () => {
-    onSearch(query); // Pass the search query back to parent
+    if (query) {
+      params.set("query", query);
+    } else {
+      params.delete("query");
+    }
+    replace(`${pathname}?${params.toString()}`);
+    console.log("Here");
+    
   };
 
   return (
     <div className="mb-5">
       <input
         type="text"
-        value={query}
-        onChange={handleChange}
+        onChange={(e) => {
+          handleSearch(e.target.value);
+        }}
+        defaultValue={searchParams.get('query')?.toString()}
         className="border rounded-lg px-4 py-2"
         placeholder="Search products..."
       />

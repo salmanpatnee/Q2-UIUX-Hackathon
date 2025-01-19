@@ -3,8 +3,20 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(request: NextRequest) {
   try {
-    const products = await client.fetch(
-      '*[_type == "product"]{title,slug,price,salePrice,"imageUrl": image.asset->url}',
+    const { searchParams } = new URL(request.url);
+    const query = searchParams.get("query");
+
+    const sanityQuery = `
+    *[_type == "product" && title match "${query || ''}*"]{
+      title,
+      slug,
+      price,
+      salePrice,
+      "imageUrl": image.asset->url
+    }
+  `;
+
+    const products = await client.fetch(sanityQuery,
       {},
       { cache: "no-store" }
     );

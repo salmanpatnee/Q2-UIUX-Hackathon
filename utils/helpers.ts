@@ -9,11 +9,23 @@ export const fetchCategories = async (): Promise<Category[]> => {
   return categories;
 };
 
-export const fetchProducts = async (): Promise<Product[]> => {
+export const fetchProducts = async (query?: string): Promise<Product[]> => {
+
   const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
-  const response = await fetch(`${baseURL}/api/products`, {
+  const url = new URL(`${baseURL}/api/products`);
+
+  if (query) {
+    url.searchParams.append("query", query);
+  }
+
+  const response = await fetch(url.toString(), {
     cache: "no-store",
   });
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch products");
+  }
+
   const products: Product[] = await response.json();
   return products;
 };

@@ -66,8 +66,8 @@ const ProductCard = ({ product }: Props) => {
 
       {/* Card Content */}
       <article className="relative z-0">
-        <div className="relative w-72 h-80">
-          <div className="relative w-72 h-80">
+        <div className="relative w-full h-80">
+          <div className="relative w-full h-80">
             <Image
               src={product.imageUrl || ""}
               alt={product?.title!}

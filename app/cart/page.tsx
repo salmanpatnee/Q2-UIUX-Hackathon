@@ -85,7 +85,7 @@ const ShopPage = () => {
                     {/* Quantity */}
                     <div className="flex justify-center">
                       <input
-                        type="number"
+                        type="number" readOnly
                         className="border rounded w-12 h-8 text-center border-gray-500"
                         defaultValue={item.quantity || 1}
                       />
@@ -143,8 +143,7 @@ const ShopPage = () => {
           </div>
         </div>
       </section>
-      <Toaster />
-      <Features />
+      
     </div>
   );
 };

@@ -1,34 +1,33 @@
 "use client";
-import Features from "../components/Features";
-import InputGroup from "../components/Input";
 import { useCart } from "@/context/cartContext";
 import { zodResolver } from "@hookform/resolvers/zod";
-import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
+import InputGroup from "../components/Input";
 
+import ErrorMessage from "@/app/components/ErrorMessage";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import PageHeader from "../components/PageHeader";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import ErrorMessage from "@/app/components/ErrorMessage";
+import PageHeader from "../components/PageHeader";
 
 const checkoutSchema = z.object({
   firstName: z.string().min(3, "First name is required").max(255),
-  lastName: z.string().min(3, "Last name is required").max(255),
-  address: z.string().min(3, "Address is required").max(255),
-  city: z.string().min(2, "City is required").max(255),
-  zip: z.string().min(3, "Zip is required").max(255),
-  phone: z.string().min(7, "phone is required").max(255),
-  email: z
-    .string()
-    .email("Email is required")
-    .min(1, "Email is required.")
-    .max(255),
+  // lastName: z.string().min(3, "Last name is required").max(255),
+  // address: z.string().min(3, "Address is required").max(255),
+  // city: z.string().min(2, "City is required").max(255),
+  // zip: z.string().min(3, "Zip is required").max(255),
+  // phone: z.string().min(7, "phone is required").max(255),
+  // email: z
+  //   .string()
+  //   .email("Email is required")
+  //   .min(1, "Email is required.")
+  //   .max(255),
 });
 
 type CheckoutForm = z.infer<typeof checkoutSchema>;
@@ -37,13 +36,22 @@ const CheckoutPage = () => {
   const { cart, clearCart } = useCart();
   const router = useRouter();
 
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   reset,
+  //   formState: { errors },
+  // } = useForm<CheckoutForm>({
+  //   resolver: zodResolver(checkoutSchema),
+  // });
+
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm<CheckoutForm>({
-    resolver: zodResolver(checkoutSchema),
+    resolver: zodResolver(checkoutSchema)
   });
 
   const calculateSubtotal = (price: number, quantity: number) =>
@@ -65,14 +73,20 @@ const CheckoutPage = () => {
       <PageHeader title="Checkout" />
 
       <section className="wrapper lg:py-20 py-10">
-        <form onSubmit={handleSubmit((data) => {
-          reset()
-          clearCart()
-          toast.success(`Your order has been placed successfully.`)
-          setTimeout(() => {
-            router.push(`/`);
-          }, 1000);
-        })}>
+        <form
+          onSubmit={handleSubmit((data) => {
+            console.log("Submit");
+            console.log(data);
+            
+            // reset();
+            // clearCart();
+            // toast.success(`Your order has been placed successfully.`);
+            // setTimeout(() => {
+            //   router.push(`/`);
+            // }, 1000);
+
+          })}
+        >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
             <div className="col-span-1 lg:col-span-6 p-2">
               <h2 className="font-semibold text-4xl mb-9">Billing details</h2>
@@ -83,7 +97,7 @@ const CheckoutPage = () => {
                   <ErrorMessage>{errors.firstName?.message}</ErrorMessage>
                 </div>
                 <div>
-                  <InputGroup label="Last Name" {...register("lastName")}/>
+                  <InputGroup label="Last Name" {...register("lastName")} />
                   <ErrorMessage>{errors.lastName?.message}</ErrorMessage>
                 </div>
               </div>
@@ -99,9 +113,7 @@ const CheckoutPage = () => {
                     Country / Region
                   </label>
                   <select className="rounded-sm h-[75px] border border-[#9F9F9F] w-full px-4">
-                    <option value="" selected>
-                      Pakistan
-                    </option>
+                    <option value="">Pakistan</option>
                     <option value="">Dubai</option>
                   </select>
                 </div>
@@ -109,14 +121,14 @@ const CheckoutPage = () => {
 
               <div className="grid">
                 <div>
-                  <InputGroup label="Street address" {...register('address')}/>
+                  <InputGroup label="Street address" {...register("address")} />
                   <ErrorMessage>{errors.address?.message}</ErrorMessage>
                 </div>
               </div>
 
               <div className="grid">
                 <div>
-                  <InputGroup label="Town / City" {...register('city')}/>
+                  <InputGroup label="Town / City" {...register("city")} />
                   <ErrorMessage>{errors.city?.message}</ErrorMessage>
                 </div>
               </div>
@@ -127,9 +139,7 @@ const CheckoutPage = () => {
                     Province
                   </label>
                   <select className="rounded-sm h-[75px] border border-[#9F9F9F] w-full px-4">
-                    <option value="" selected>
-                      Sindh
-                    </option>
+                    <option value="">Sindh</option>
                     <option value="">Punjab</option>
                   </select>
                 </div>
@@ -137,21 +147,25 @@ const CheckoutPage = () => {
 
               <div className="grid">
                 <div>
-                  <InputGroup label="ZIP code" {...register('zip')}/>
+                  <InputGroup label="ZIP code" {...register("zip")} />
                   <ErrorMessage>{errors.zip?.message}</ErrorMessage>
                 </div>
               </div>
 
               <div className="grid">
                 <div>
-                  <InputGroup label="Phone" type="tel" {...register('phone')}/>
+                  <InputGroup label="Phone" type="tel" {...register("phone")} />
                   <ErrorMessage>{errors.phone?.message}</ErrorMessage>
                 </div>
               </div>
 
               <div className="grid">
                 <div>
-                  <InputGroup label="Email address" type="email" {...register('email')}/>
+                  <InputGroup
+                    label="Email address"
+                    type="email"
+                    {...register("email")}
+                  />
                   <ErrorMessage>{errors.email?.message}</ErrorMessage>
                 </div>
               </div>
@@ -273,8 +287,6 @@ const CheckoutPage = () => {
           </div>
         </form>
       </section>
-      <Toaster />
-      <Features />
     </div>
   );
 };

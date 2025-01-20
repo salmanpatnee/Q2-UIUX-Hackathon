@@ -45,6 +45,7 @@ const CheckoutPage = () => {
     resolver: zodResolver(checkoutSchema),
   });
 
+  
 
   const calculateSubtotal = (price: number, quantity: number) =>
     price * quantity;
@@ -77,6 +78,7 @@ const CheckoutPage = () => {
 
           })}
         >
+        {/* <form> */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
             <div className="col-span-1 lg:col-span-6 p-2">
               <h2 className="font-semibold text-4xl mb-9">Billing details</h2>

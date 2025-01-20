@@ -1,25 +1,11 @@
 import {
-  Calendar,
-  Calendar1,
   ChevronRight,
-  SearchIcon,
-  Tag,
-  TagIcon,
-  Trash,
-  User,
+  SearchIcon
 } from "lucide-react";
 import Link from "next/link";
-import React from "react";
 
 import Image from "next/image";
-import Features from "../components/Features";
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import BlogPost from "../components/BlogPost";
 import Pagination from "../components/Pagination";
 
@@ -186,7 +172,6 @@ const BlogPage = () => {
           </div>
         </div>
 
-        <Pagination itemCount={100} pageSize={10} currentPage={1} />
       </section>
 
     </div>

@@ -2,10 +2,17 @@
 import React from "react";
 import { useState } from "react";
 
-const Quantity = () => {
+interface Props {
+  stock: number
+}
+
+const Quantity = ({stock}: Props) => {
   const [quantity, setQuantity] = useState(1);
 
-  const increment = () => setQuantity((prev) => prev + 1);
+  const increment = () => {
+    
+    setQuantity((prev) => prev + 1);
+  }
   const decrement = () => {
     if (quantity > 1) setQuantity((prev) => prev - 1);
   };
@@ -22,7 +29,7 @@ const Quantity = () => {
       <input
         type="number"
         value={quantity}
-        min="1"
+        min="1" max={stock}
         readOnly
         className="border-y border-black focus:outline-none h-16 text-center w-10"
       />

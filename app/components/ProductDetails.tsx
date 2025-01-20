@@ -7,6 +7,7 @@ import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 import { urlFor } from "@/sanity/lib/image";
 import AddToCart from "../products/[slug]/__components/AddToCart";
+import Quantity from "../products/[slug]/__components/Quantity";
 
 interface Props {
   product: Product;
@@ -122,12 +123,12 @@ const ProductDetails = ({ product }: Props) => {
           </div> */}
 
           <div className="flex flex-col md:flex-row gap-2 border-b pb-14 mb-10">
-            {/* <Quantity/> */}
-            <AddToCart product={product}/>
-            <button className="bg-white text-black border border-black rounded-lg text-center h-16 px-12 text-base hover:bg-primary hover:text-white hover:border-primary flex items-center justify-center space-x-2">
+            {/* <Quantity stock={product.stock || 0} /> */}
+            <AddToCart product={product} />
+            {/* <button className="bg-white text-black border border-black rounded-lg text-center h-16 px-12 text-base hover:bg-primary hover:text-white hover:border-primary flex items-center justify-center space-x-2">
               <Plus />
               <span>Compare</span>
-            </button>
+            </button> */}
           </div>
           <div className="pb-10">
             <ul className="space-y-3">

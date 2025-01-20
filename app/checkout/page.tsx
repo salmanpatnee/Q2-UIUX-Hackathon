@@ -18,16 +18,16 @@ import PageHeader from "../components/PageHeader";
 
 const checkoutSchema = z.object({
   firstName: z.string().min(3, "First name is required").max(255),
-  // lastName: z.string().min(3, "Last name is required").max(255),
-  // address: z.string().min(3, "Address is required").max(255),
-  // city: z.string().min(2, "City is required").max(255),
-  // zip: z.string().min(3, "Zip is required").max(255),
-  // phone: z.string().min(7, "phone is required").max(255),
-  // email: z
-  //   .string()
-  //   .email("Email is required")
-  //   .min(1, "Email is required.")
-  //   .max(255),
+  lastName: z.string().min(3, "Last name is required").max(255),
+  address: z.string().min(3, "Address is required").max(255),
+  city: z.string().min(2, "City is required").max(255),
+  zip: z.string().min(3, "Zip is required").max(255),
+  phone: z.string().min(7, "phone is required").max(255),
+  email: z
+    .string()
+    .email("Email is required")
+    .min(1, "Email is required.")
+    .max(255),
 });
 
 type CheckoutForm = z.infer<typeof checkoutSchema>;
@@ -36,23 +36,15 @@ const CheckoutPage = () => {
   const { cart, clearCart } = useCart();
   const router = useRouter();
 
-  // const {
-  //   register,
-  //   handleSubmit,
-  //   reset,
-  //   formState: { errors },
-  // } = useForm<CheckoutForm>({
-  //   resolver: zodResolver(checkoutSchema),
-  // });
-
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm<CheckoutForm>({
-    resolver: zodResolver(checkoutSchema)
+    resolver: zodResolver(checkoutSchema),
   });
+
 
   const calculateSubtotal = (price: number, quantity: number) =>
     price * quantity;
@@ -75,15 +67,13 @@ const CheckoutPage = () => {
       <section className="wrapper lg:py-20 py-10">
         <form
           onSubmit={handleSubmit((data) => {
-            console.log("Submit");
-            console.log(data);
-            
-            // reset();
-            // clearCart();
-            // toast.success(`Your order has been placed successfully.`);
-            // setTimeout(() => {
-            //   router.push(`/`);
-            // }, 1000);
+          
+            reset();
+            clearCart();
+            toast.success(`Your order has been placed successfully.`);
+            setTimeout(() => {
+              router.push(`/`);
+            }, 1000);
 
           })}
         >

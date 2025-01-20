@@ -1,8 +1,7 @@
-import { Heart, Search, ShoppingCart, UserRound } from "lucide-react";
+import { Heart, Search, ShoppingCart, UserRound, UtensilsCrossed } from "lucide-react";
 import Link from "next/link";
 import MobileNavbar from "./components/MobileNavbar";
 import Navbar from "./components/Navbar";
-
 import MiniCart from "./components/MiniCart";
 
 const Header = () => {
@@ -12,8 +11,8 @@ const Header = () => {
         {/* Logo Section */}
         <div className="col logo w-full text-center md:w-auto">
           <Link href="/" className="flex items-center gap-1">
-          <ShoppingCart size={'35'} className="text-primary"/>
-            <h1 className="font-bold text-[34px]">NextCart</h1>
+          <UtensilsCrossed size={'35'} className="text-primary"/>
+            <h1 className="font-bold text-[34px]">QuickFood</h1>
           </Link>
         </div>
 
@@ -39,12 +38,12 @@ const Header = () => {
             </Link>
 
             {/* Search Icon */}
-            <Link href="/" className="group">
+            {/* <Link href="/" className="group">
               <Search
                 size={32}
                 className="stroke-current text-black transition-colors group-hover:stroke-primary"
               />
-            </Link>
+            </Link> */}
 
             {/* Wishlist Icon */}
             <Link href="/" className="group">

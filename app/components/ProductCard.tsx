@@ -9,14 +9,6 @@ interface Props {
 }
 
 const ProductCard = ({ product }: Props) => {
-
-  // const productImageUrl = product?.image
-  //   ? urlFor(product.image)?.width(285).height(301).url()
-  //   : "https://placehold.co/550x310/png";
-
-    
-
-    
   return (
     <div className="group relative rounded-md overflow-hidden">
       {/* Mask Overlay */}
@@ -75,13 +67,15 @@ const ProductCard = ({ product }: Props) => {
       {/* Card Content */}
       <article className="relative z-0">
         <div className="relative w-72 h-80">
-          <Image
-            src={product.imageUrl || ""}
-            alt={product?.title!}
-           layout="fill"
-             objectFit="cover"
-            className="rounded-t-md w-full"
-          />
+          <div className="relative w-72 h-80">
+            <Image
+              src={product.imageUrl || ""}
+              alt={product?.title!}
+              layout="fill"
+              objectFit="cover"
+              className="rounded-t-md"
+            />
+          </div>
 
           {/* {product.discount && (
             <span className="bg-[#E97171] rounded-full w-12 h-12 text-white text-base font-medium absolute top-6 right-6 flex items-center justify-center z-20">

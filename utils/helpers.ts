@@ -10,7 +10,6 @@ export const fetchCategories = async (): Promise<Category[]> => {
 };
 
 export const fetchProducts = async (query?: string): Promise<Product[]> => {
-
   const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
   const url = new URL(`${baseURL}/api/products`);
 
@@ -31,7 +30,6 @@ export const fetchProducts = async (query?: string): Promise<Product[]> => {
 };
 
 export const fetchProduct = async (slug: string): Promise<Product> => {
-
   try {
     const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
     const response = await fetch(`${baseURL}/api/products/${slug}`, {

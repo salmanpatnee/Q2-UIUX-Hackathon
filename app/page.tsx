@@ -15,7 +15,7 @@ const HomePage = async () => {
         <div className="wrapper">
           {/* Section Title */}
           <header>
-            <h2 className="title">Today's Menu</h2>
+            <h2 className="title">Today&apos;s Menu</h2>
           </header>
 
           {/* Product Grid */}

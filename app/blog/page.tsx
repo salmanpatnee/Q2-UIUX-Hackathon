@@ -186,10 +186,9 @@ const BlogPage = () => {
           </div>
         </div>
 
-        <Pagination />
+        <Pagination itemCount={100} pageSize={10} currentPage={1} />
       </section>
 
-      <Features />
     </div>
   );
 };

@@ -1,14 +1,12 @@
 "use client";
 
-import React from "react";
-import { Trash } from "lucide-react";
-import Link from "next/link";
-import Image from "next/image";
-import Features from "../components/Features";
-import PageHeader from "../components/PageHeader";
 import { useCart } from "@/context/cartContext";
 import { urlFor } from "@/sanity/lib/image";
-import toast, { Toaster } from "react-hot-toast";
+import { Trash } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import toast from "react-hot-toast";
+import PageHeader from "../components/PageHeader";
 
 const ShopPage = () => {
   const { cart, removeItemFromCart } = useCart();
@@ -61,7 +59,7 @@ const ShopPage = () => {
                             ? urlFor(item.image)?.width(80).height(80).url()
                             : "/images/placeholder.png"
                         }
-                        alt={item.slug.current}
+                        alt={item.slug?.current!}
                         width={80}
                         height={80}
                         className="border-primary border rounded mx-auto lg:mx-0"
@@ -93,7 +91,7 @@ const ShopPage = () => {
 
                     {/* Subtotal */}
                     <div className="text-center text-base">
-                      Rs. {calculateSubtotal(item.price, item.quantity || 1)}
+                      Rs. {calculateSubtotal(item.price!, item.quantity || 1)}
                     </div>
 
                     {/* Remove */}

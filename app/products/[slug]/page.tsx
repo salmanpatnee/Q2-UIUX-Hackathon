@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props) {
 
   return {
     title: `${product.title} - NextCart`,
-    description: product.description || "Buy the best products at NextCart!",
+    description: "Buy the best products at NextCart!", 
   };
 }
 

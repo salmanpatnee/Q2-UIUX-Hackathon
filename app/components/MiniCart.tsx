@@ -22,7 +22,7 @@ const MiniCart = () => {
       cart.cartItems
         .reduce(
           (total, item) =>
-            total + calculateSubtotal(item.price, item.quantity || 1),
+            total + calculateSubtotal(item.price!, item.quantity || 1),
           0
         )
         .toFixed(2)

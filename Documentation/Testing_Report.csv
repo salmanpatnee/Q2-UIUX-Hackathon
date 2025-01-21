@@ -1,0 +1,21 @@
+Test Case ID,Test Case Description,Test Steps,Expected Result,Actual Result,Status,Severity Level,Remarks
+TC001,Homepage Load Test,Navigate to homepage,Homepage loads without errors,Homepage loads without errors,Pass,Low,No issues detected
+TC002,Navigation Test,Click on main menu link,Correct page is displayed,Correct page is displayed,Pass,Low,Navigation smooth
+TC003,Image Load Test,Load homepage images,All images display correctly,All images display correctly,Pass,Low,No broken images
+TC005,Footer Links Test,Click footer links,Correct pages are opened,Correct pages are opened,Pass,Low,Navigation smooth
+TC005,Product Section Data Test,Visit homepage and check product section,Products are displayed correctly,Products are displayed correctly,Pass,Low,Products loaded from Sanity as expected
+TC006,Product Detail Page Test,Click on a product button,Product detail page loads correctly,Product detail page loads correctly,Pass,Low,Product details displayed as expected
+TC007,Dynamic Routing Test,Click on different product links,Correct product detail pages load,Correct product detail pages load,Pass,Low,Dynamic routing functions correctly
+TC008,Add to Cart Functionality,"Click ""Buy Now"" button on product page",Item is added to the cart correctly,Item is added to the cart correctly,Pass,Medium,Add to cart works as expected
+TC009,Mini Cart Item Count,Add item to cart and check mini cart,Mini cart displays correct item count,Mini cart displays correct item count,Pass,Low,Mini cart updates correctly with item count
+TC010,Cart Page Item Display,Navigate to the cart page,Items in cart display correctly,Items in cart display correctly,Pass,Medium,Cart page shows all added items accurately
+TC011,Remove Items from Cart,Remove item from cart,Item is removed from the cart,Item is removed from the cart,Pass,Medium,Items can be removed without issues
+TC012,Cart Total Update,Add/remove items and check total,Total updates correctly,Total updates correctly,Pass,Medium,Cart total reflects correct amounts
+TC014,Navigate from Cart to Checkout,"Click ""Checkout"" button from cart page",Redirects to checkout page,Redirects to checkout page,Pass,Medium,Navigation to checkout works correctly
+TC015,Checkout Page Item and Total,Verify items and total on checkout page,Items and total display correctly,Items and total display correctly,Pass,High,Correct items and totals are shown
+TC016,Checkout Form Validation,Enter invalid data in form fields,Validation errors are shown,Validation errors are shown,Pass,High,Form validation prevents invalid data
+TC017,Checkout Form Submission,Fill and submit checkout form,Form submits successfully,Form submits successfully,Pass,Critical,Checkout process completes as expected
+TC018,Visit shop page loads data correctly,Navigate to the shop page,Shop page loads correctly with all data,Shop page loads correctly with all data,Pass,Low,No issues found
+TC019,Search is working,Enter a search term and hit enter,Relevant results are displayed,Relevant results are displayed,Pass,Medium,Functionality works
+TC020,Filter is not working,Apply filters on the shop page,Filters should filter products accordingly,Filters don't apply any change,Failed,High,Needs investigation
+TC021,Pagination not working,Click through pages in pagination,Correct data should be displayed per page,Pagination doesn't navigate correctly,Failed,High,Needs investigation

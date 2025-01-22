@@ -1,47 +1,81 @@
-# E-commerce Figma to Next.js Static Template
+# 7-Day Hackathon: Building a Marketplace
 
-## Project Overview
-This project involves converting a Figma-based e-commerce design into a static Next.js template. Below is a brief description of my approach to building this static template.
+This is a summary of our 7-day Hackathon where we worked to create a marketplace from start to finish. Here's what we did each day:
 
-## Approach
+## Day 1: Planning the Foundation
+We started by using paper and pencil to:
+- Set business goals.
+- Create a basic plan for our data.
+- Outline what we wanted to achieve with our marketplace.
 
-1. **Design Analysis**  
-   I began by thoroughly analyzing the Figma design to understand the layout and structure of the website. I identified reusable components and elements that appear across different pages, such as headers, footers, buttons, and product cards.
+## Day 2: Setting Up the Technical Plan
+Next, we moved to planning the technical side:
+- Picked the tools and technology we would use.
+- Designed how the system would work.
+- Prepared our computers and tools for development.
 
-2. **Tailwind CSS Customization**  
-   After identifying the design elements, I extracted the primary, secondary, accent, and text colors, as well as the fonts used in the design. I customized the Tailwind CSS configuration to include these colors and fonts, ensuring consistency throughout the template.
+## Day 3: Connecting APIs and Moving Data
+We connected to important external services (APIs) and moved our data:
+- Linked up with external APIs.
+- Transferred data from old systems to the new one.
+- Made sure everything worked together smoothly.
 
-3. **Component Creation**  
-   The next step was to build the header and footer as separate components, allowing them to be reused across multiple pages. This ensures that any changes to the layout can be made in one place, maintaining uniformity across the static pages.
+## Day 4: Building the Marketplace
+We built the key parts of our marketplace:
+- Created the main pages and features.
+- Added extra features to make it better for users.
+- Linked the frontend (what users see) with the backend (the server).
 
-4. **Reusable Utility Classes**  
-   To improve development efficiency, I created a set of reusable Tailwind utility classes. These include:
-   - `wrapper`: Acts as a container for centering content (similar to Bootstrap’s container).
-   - `title`: A consistent style for headings throughout the template.
+## Day 5: Testing and Improving
+We tested everything to find and fix problems:
+- Ran tests to check for any issues.
+- Improved the backend system.
+- Made the marketplace faster and more reliable.
 
-5. **Reusable Components**  
-   I developed a variety of reusable components to save time and keep the code DRY (Don't Repeat Yourself). These components include:
-   - BlogPost
-   - CategoryCard
-   - ProductCard
-   - FeatureSection
-   - HeroSection
-   - Input Fields
-   - Mini Cart
-   - Pagination
+## Day 6: Getting Ready to Launch
+We prepared to launch the marketplace:
+- Set up a staging area for final tests.
+- Made sure everything was ready for the live launch.
+- Checked that the deployment process would go smoothly.
 
-6. **Static Page Development**  
-   I created the following pages based on the Figma design as static templates:
-   - [Home](https://q2-uiux-hackathon.vercel.app/)
-   - [Shop](https://q2-uiux-hackathon.vercel.app/shop)
-   - [Product Detail](https://q2-uiux-hackathon.vercel.app/products/respira)
-   - [Cart](https://q2-uiux-hackathon.vercel.app/cart)
-   - [Checkout](https://q2-uiux-hackathon.vercel.app/checkout)
-   - [Contact](https://q2-uiux-hackathon.vercel.app/contact)
-   - [Blog](https://q2-uiux-hackathon.vercel.app/blog)
+## Day 7: Launching and Monitoring
+Finally, we launched the marketplace:
+- Made it live for everyone to use.
+- Watched for any problems and fixed them quickly.
+- Set up tools to monitor how things were running and get user feedback.
 
 ## Conclusion
-By carefully analyzing the design and breaking it down into reusable components, I was able to efficiently convert the Figma design into a static Next.js template. This template can be easily extended or integrated into a fully dynamic application in the future.
+In just seven days, we went from an idea to a live marketplace. Each day had a clear focus that helped us stay on track and successfully launch a working product. Now, we’re ready to keep improving based on what our users need.
+
+# Application Project Structure
+
+This document outlines the project structure of a Next.js application with an app router setup, including specific folders and their contents.
+
+## Project Structure
+
+```
+nextjs-app/
+├── Documentation/
+│   ├── Day 1 - Marketplace Business Goals - QuickFood.pdf
+│   ├── Day 2 - Marketplace Technical Foundation - QuickFood.pdf
+│   ├── Day 3 - API Integration Report - QuickFood.pdf
+│   ├── Day 4 - Dynamic Frontend Components - QuickFood.pdf
+│   ├── Day 5 - Testing and Backend Refinement - QuickFood.pdf
+│   ├── Day 6 - Staging Deployment Report - QuickFood.pdf
+│   ├── api_endpoints.xlsx
+│   ├──Testing_Report.csv
+│   ├──Staging_Testing_Report.csv
+├── components/
+├── context/
+├── Sanity/
+├── utils/
+├── pages/
+├── public/
+├── styles/
+├── package.json
+├── next.config.js
+└── README.md
+```
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
